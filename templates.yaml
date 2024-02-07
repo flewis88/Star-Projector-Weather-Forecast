@@ -1,0 +1,12 @@
+sensor:
+  - unique_id: forecast_high_temp
+    attributes:
+      friendly_name: "Today's High Temp"
+    state: >
+      {{ state_attr('weather.forecast_home','forecast')[0]['temperature'] }}
+  - unique_id: forecast_rainfall_projection
+    attributes:
+      friendly_name: "Rainfall Projection"
+    state: >
+      {% set x = 205 + 8*state_attr('weather.forecast_home','forecast')[0]['precipitation'] %}
+      {{ ([200, x, 1000]|sort)[1] }}
