@@ -8,7 +8,7 @@ Prerequisites:
 
 Steps:
 1. Configure Star Projector via GUI or \config\.storage\core.config_entries as per LocalTuyaDeviceConfig.md
-2. Create sensor for "Forecast High Temp" in Templates.yaml
+2. Create sensor for "Forecast High Temp" & "Rainfall Projection" in Templates.yaml
 3. Create script for "Turn Stars on Temp & Rain"in Templates.yaml
 4. Create an Automation to execute the script at a given time in Automations.yaml
 
