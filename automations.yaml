@@ -1,0 +1,11 @@
+- id: '17777777777777777'
+  alias: 530am - Forecast to Star Projector
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:30:00
+  condition: []
+  action:
+  - service: script.turn_stars_on_temp_and_rain
+    data: {}
+  mode: single
