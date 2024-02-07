@@ -7,7 +7,7 @@ Prerequisites:
 - LocalTuya integration
 
 Steps:
-1. Configure Star Projector via GUI or \config\.storage\core.config_entries as per LocalTuyaDeviceConfig.md
+1. Configure Star Projector & DP IDs via GUI or \config\.storage\core.config_entries as per LocalTuyaDeviceConfig.md (Note Colour uses the 'select' entity with hardcoded colours expressed in 12bit HEX "hhhhssssvvvv". This may be able to be modified to accept input of the HSV colour as unique 12 bit HEX, allowing for seamless temp changes)
 2. Create sensor for "Forecast High Temp" & "Rainfall Projection" in templates.yaml
 3. Create script for "Turn Stars on Temp & Rain"in scripts.yaml
 4. Create an Automation to execute the script at a given time in Automations.yaml
