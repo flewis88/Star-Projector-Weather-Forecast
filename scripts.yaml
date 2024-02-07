@@ -1,0 +1,38 @@
+turn_stars_on_temp_and_rain:
+  alias: Turn Stars on Temp & Rain
+  sequence:
+    - service: switch.turn_on
+      metadata: {}
+      data: {}
+      target:
+        entity_id: switch.star_projector_power_state
+    - service: switch.turn_on
+      metadata: {}
+      data: {}
+      target:
+        entity_id: switch.star_projector_colour_state
+    - service: select.select_option
+      data:
+        entity_id: select.star_projector_colour
+        option: >-
+          {%- if state_attr('weather.forecast_home','forecast')[0]['temperature'] >= 31.0 -%} Red
+          {%- elif state_attr('weather.forecast_home','forecast')[0]['temperature'] > 28.0 -%} Red-Greenish
+          {%- elif state_attr('weather.forecast_home','forecast')[0]['temperature'] > 25.0 -%} Green-Red
+          {%- elif state_attr('weather.forecast_home','forecast')[0]['temperature'] > 22.0 -%} Green-Reddish 
+          {%- elif state_attr('weather.forecast_home','forecast')[0]['temperature'] > 19.0 -%} Green
+          {%- elif state_attr('weather.forecast_home','forecast')[0]['temperature'] > 16.0 -%} Green-Bluish
+          {%- elif state_attr('weather.forecast_home','forecast')[0]['temperature'] > 13.0 -%} Blue-Green  
+          {%- elif state_attr('weather.forecast_home','forecast')[0]['temperature'] > 10.0 -%} Blue-Greenish  
+          {%- elif state_attr('weather.forecast_home','forecast')[0]['temperature'] <= 10.0 -%} Blue   
+          {% endif %}
+    - service: switch.turn_on
+      metadata: {}
+      data: {}
+      target:
+        entity_id: switch.star_projector_laser_state
+    - service: number.set_value
+      data:
+        entity_id: number.star_projector_laser_brightness
+        value: "{{ states('sensor.template_forecast_rainfall_projection') }}"
+  mode: single
+  icon: mdi:star
