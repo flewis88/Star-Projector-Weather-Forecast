@@ -13,3 +13,6 @@ Steps:
 4. Create an Automation to execute the script at a given time in Automations.yaml
 
 ![il_680x540 3766546169_593x](https://github.com/flewis88/Star-Projector-Weather-Forecast/assets/52615288/e544f308-7ad9-4029-81f1-adffc4c975cf)
+
+![PXL_20240214_001047117](https://github.com/flewis88/Star-Projector-Weather-Forecast/assets/52615288/31ade3a4-41e4-4e43-9e95-27248d06f2e1)
+
